@@ -1,0 +1,68 @@
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 15px 60px;
+  border-radius: 45px;
+  background: linear-gradient(#f0ece0, #f07f21);
+}
+.cityInput {
+  width: 70%;
+  text-align: center;
+  display: block;
+}
+.buttonInput {
+  align-items: left;
+  padding: 3px 20px;
+  display: block;
+  border-radius: 13px;
+  background-color: greenyellow;
+}
+.cityName {
+  text-align: center;
+  font-family: "PT Mono", monospace;
+}
+.mon,
+.tue,
+.wed,
+.thu,
+.fri {
+  font-size: 35px;
+  text-align: center;
+}
+span {
+  padding: 10px;
+  border: solid;
+  margin: 0px 0px 0px 20px;
+  border-radius: 30px;
+  background-color: #f0ece0;
+  float: right;
+  font-size: 25px;
+  width: 170px;
+  text-align: center;
+}
+.col-5 {
+  text-align: center;
+}
+.col-7 {
+  text-align: center;
+}
+.emoji {
+  font-size: 50px;
+}
+.rain,
+.wind,
+.sunrise,
+.sunset {
+  font-size: 25px;
+}
+.fa-sun,
+.fa-moon {
+  font-size: 30px;
+}
+h3 {
+  text-align: center;
+}
+.temp {
+  border: none;
+  background-color: transparent;
+}
