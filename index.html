@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Parcel Sandbox</title>
+    <title>Weather app</title>
     <meta charset="UTF-8" />
     <link rel="stylesheet" href="src/style.css" />
     <link
@@ -25,46 +25,43 @@
   <body>
     <div class="container">
       <br />
-      <div class="input-group mb-3">
-        <input
-          type="search"
-          placeholder="Enter City Name.."
-          autocomplete="off"
-          class="form-control"
-          id="city-input"
-        />
-        <button
-          class="btn custom-btn btn-outline-secondary"
-          type="button"
-          id="button-addon2"
-        >
-          Search
-        </button>
-        <button
-          class="btn custom-btn btn-outline-secondary"
-          type="button"
-          id="point"
-        >
-          📌
-        </button>
-      </div>
+      <form id="search-form">
+        <div class="row">
+          <div class="col-10" id="inputSearch">
+            <input
+              type="search"
+              placeholder="Enter City Name.."
+              class="form-control"
+              id="city-input"
+              autocomplete="off"
+            />
+          </div>
+          <div class="col-2">
+            <Input
+            class="btn custom-btn btn-outline-secondary"
+              type="submit"
+              value="search"
+            ></input>
+          </div>
+        </div>
+      </form>
       <br />
       <br />
-      <h3 id="DatePlace">Date</h3>
+      <h3 id="DatePlace"></h3>
       <h1 class="cityName">Szczecin, Poland</h1>
       <br />
       <br />
       <div class="row">
         <div class="col-5">
-          <div class="mon">Mon <span>10°C | 14°C</span></div>
+          <div class="mon">Mon <span class="days_temp">10°C | 14°C</span></div>
           <br />
-          <div class="tue">Tue <span>13°C | 5°C</span></div>
+          <div class="tue">Tue <span class="days_temp">13°C | 5°C</span></div>
           <br />
-          <div class="wed">Wed <span>12°C | 10°C</span></div>
+          <div class="wed">Wed <span class="days_temp">12°C | 10°C</span></div>
           <br />
-          <div class="thu">Thu <span>16°C | 10°C</span></div>
+          <div class="thu">Thu <span class="days_temp">16°C | 10°C</span></div>
           <br />
-          <div class="fri">Fri <span> 16°C | 7°C</span></div>
+          <div class="fri">Fri <span class="days_temp"> 16°C | 7°C</span></div>
           <br />
           <br />
         </div>
@@ -73,21 +70,36 @@
           <div>
             <h1>Today</h1>
           </div>
-          <div class="emoji">☁</div>
-          <br />
+          <div class="weather_icon">
+            <img
+              src="http://openweathermap.org/img/wn/10d@2x.png"
+              alt=""
+              id="icon"
+            />
+          </div>
           <div class="temperature">
-            <h1><button class="temp">15°C</button></h1>
+            <span id="desc">Cloudy</span>
+            <br />
+            <h1>
+              <strong class="temp">16</strong>
+              <span class="units"
+                ><a href="" id="celsiusUnit" class="active">℃</a> |
+                <a href="#" id="farenheitUnit">℉</a></span
+              >
+            </h1>
           </div>
           <br />
           <br />
           <div class="row">
             <div class="col">
-              <div class="wind">Wind: 6 mph</div>
+              <div class="wind_class">Wind: <span id="wind">2</span>km/h</div>
               <br />
               <div class="sunrise"><i class="far fa-sun"></i>: 5:40</div>
             </div>
             <div class="col">
-              <div class="rain">Rain: 10%</div>
+              <div class="humidity_class">
+                Humidity: <span id="humidity">50</span>%
+              </div>
               <br />
               <div class="sunset"><i class="far fa-moon"></i>: 21:20</div>
             </div>

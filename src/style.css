@@ -29,7 +29,7 @@
   font-size: 35px;
   text-align: center;
 }
-span {
+.days_temp {
   padding: 10px;
   border: solid;
   margin: 0px 0px 0px 20px;
@@ -46,11 +46,11 @@ span {
 .col-7 {
   text-align: center;
 }
-.emoji {
+.weather_icon {
   font-size: 50px;
 }
-.rain,
-.wind,
+.humidity_class,
+.wind_class,
 .sunrise,
 .sunset {
   font-size: 25px;
@@ -65,4 +65,25 @@ h3 {
 .temp {
   border: none;
   background-color: transparent;
+}
+
+#farenheitUnit,
+#celsiusUnit {
+  text-decoration: none;
+}
+
+#desc {
+  font-size: 28px;
+}
+
+.temperature .active {
+  color: rgb(33, 33, 33);
+  cursor: default;
+}
+
+.temperature .active:hover {
+  text-decoration: none;
+}
+#inputSearch {
+  text-align: center;
 }
