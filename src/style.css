@@ -2,21 +2,15 @@
   max-width: 800px;
   margin: 0 auto;
   padding: 15px 60px;
-  border-radius: 45px;
-  background: linear-gradient(#f0ece0, #f07f21);
+  border-radius: 15px;
+  background: linear-gradient(#bdc32e, #1a7b3d);
 }
 .cityInput {
   width: 70%;
   text-align: center;
   display: block;
 }
-.buttonInput {
-  align-items: left;
-  padding: 3px 20px;
-  display: block;
-  border-radius: 13px;
-  background-color: greenyellow;
-}
+
 .cityName {
   text-align: center;
   font-family: "PT Mono", monospace;
@@ -28,15 +22,24 @@
 .fri {
   font-size: 35px;
   text-align: center;
+  transition: all 200ms ease-in-out;
+  padding: 10px;
+}
+.mon:hover,
+.tue:hover,
+.wed:hover,
+.thu:hover,
+.fri:hover {
+background: #bdc32e;
 }
 .days_temp {
   padding: 10px;
   border: solid;
-  margin: 0px 0px 0px 20px;
-  border-radius: 30px;
+  margin: 0px 0px 0px 40px;
+  border-radius: 10px;
   background-color: #f0ece0;
   float: right;
-  font-size: 25px;
+  font-size: 20px;
   width: 170px;
   text-align: center;
 }
@@ -84,6 +87,7 @@ h3 {
 .temperature .active:hover {
   text-decoration: none;
 }
+
 #inputSearch {
   text-align: center;
 }

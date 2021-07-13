@@ -18,7 +18,7 @@ if (minutes < 10) {
   minutes = `0${minutes}`;
 }
 
-let actualDate = document.querySelector("h3#DatePlace");
+let actualDate = document.querySelector("#DatePlace");
 actualDate.innerHTML = `${day} ${hour}:${minutes}`;
 
 function showCurrent(response) {
