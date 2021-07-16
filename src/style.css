@@ -15,22 +15,14 @@
   text-align: center;
   font-family: "PT Mono", monospace;
 }
-.mon,
-.tue,
-.wed,
-.thu,
-.fri {
+.week {
   font-size: 35px;
   text-align: center;
   transition: all 200ms ease-in-out;
   padding: 10px;
 }
-.mon:hover,
-.tue:hover,
-.wed:hover,
-.thu:hover,
-.fri:hover {
-background: #bdc32e;
+.week:hover {
+  background: #bdc32e;
 }
 .days_temp {
   padding: 10px;
@@ -95,4 +87,7 @@ h3 {
 #sourceCode {
   max-width: 800px;
   margin: 0 0 0 20%;
+}
+.temperature-max {
+  font-weight: bold;
 }
