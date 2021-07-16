@@ -95,8 +95,6 @@ function showCurrent(response) {
   let dateElement = document.querySelector("#DatePlace");
   let sunriseElement = document.querySelector("#sunrise");
   let sunsetElement = document.querySelector("#sunset");
-
-  console.log(response);
   
   celsiusTemperature = response.data.main.temp;
   nameCity.innerHTML = response.data.name;
@@ -105,8 +103,8 @@ function showCurrent(response) {
   wind.innerHTML = Math.round(response.data.wind.speed);
   tempereature.innerHTML = Math.round(celsiusTemperature);
   dateElement.innerHTML = formatDate(response.data.dt * 1000);
-  sunriseElement.innerHTML = formatTime(response.data.sys.sunrise * 1000);
-  sunsetElement.innerHTML = formatTime(response.data.sys.sunset * 1000);
+  sunriseElement.innerHTML = formatTime(response.data.sys.sunrise * 1000 + (response.data.timezone *1000));
+  sunsetElement.innerHTML = formatTime(response.data.sys.sunset * 1000 + (response.data.timezone * 1000));
 
   icon.setAttribute(
     "src",
