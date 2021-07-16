@@ -46,8 +46,8 @@
 }
 .humidity_class,
 .wind_class,
-.sunrise,
-.sunset {
+.sunrise_class,
+.sunset_class {
   font-size: 25px;
 }
 .fa-sun,
@@ -62,22 +62,8 @@ h3 {
   background-color: transparent;
 }
 
-#farenheitUnit,
-#celsiusUnit {
-  text-decoration: none;
-}
-
 #desc {
   font-size: 28px;
-}
-
-.temperature .active {
-  color: rgb(33, 33, 33);
-  cursor: default;
-}
-
-.temperature .active:hover {
-  text-decoration: none;
 }
 
 #inputSearch {

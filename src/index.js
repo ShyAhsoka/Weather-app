@@ -1,3 +1,16 @@
+function formatTime(timestamp) {
+  let date = new Date(timestamp);
+  let hours = date.getHours();
+  if (hours < 10) {
+    hours = `0${hours}`;
+  }
+  let minutes = date.getMinutes();
+  if (minutes < 10) {
+    minutes = `0${minutes}`;
+  }
+
+  return `${hours}:${minutes}`;
+}
 function formatDate(timestamp) {
   let date = new Date(timestamp);
   let hours = date.getHours();
@@ -37,15 +50,15 @@ function displayForecast(response) {
   let forecastHTML = "";
 
   forecast.forEach(function (forecastDay, index) {
-    if (index > 0 && index < 7) {
+    if (index < 6) {
       forecastHTML =
         forecastHTML +
         `
             <div class="week">
-            ${formatDay(forecastDay.dt)}
             <img src="http://openweathermap.org/img/wn/${
               forecastDay.weather[0].icon
-            }@2x.png" alt="" width="40"/>
+            }@2x.png" alt="" width="60"/>
+            ${formatDay(forecastDay.dt)}
             <span class="days_temp">
               <span class="temperature-max">${Math.round(
                 forecastDay.temp.max
@@ -80,7 +93,11 @@ function showCurrent(response) {
   let wind = document.querySelector("#wind");
   let icon = document.querySelector("#icon");
   let dateElement = document.querySelector("#DatePlace");
+  let sunriseElement = document.querySelector("#sunrise");
+  let sunsetElement = document.querySelector("#sunset");
 
+  console.log(response);
+  
   celsiusTemperature = response.data.main.temp;
   nameCity.innerHTML = response.data.name;
   description.innerHTML = response.data.weather[0].description;
@@ -88,6 +105,8 @@ function showCurrent(response) {
   wind.innerHTML = Math.round(response.data.wind.speed);
   tempereature.innerHTML = Math.round(celsiusTemperature);
   dateElement.innerHTML = formatDate(response.data.dt * 1000);
+  sunriseElement.innerHTML = formatTime(response.data.sys.sunrise * 1000);
+  sunsetElement.innerHTML = formatTime(response.data.sys.sunset * 1000);
 
   icon.setAttribute(
     "src",
@@ -110,31 +129,7 @@ function handleSubmit(event) {
   search(cityInputElement.value);
 }
 
-function displayFarenheitTemp(event) {
-  event.preventDefault();
-  let farenheitTemperature = (celsiusTemperature * 9) / 5 + 32;
-  let temperatureElement = document.querySelector(".temp");
-  temperatureElement.innerHTML = Math.round(farenheitTemperature);
-  celsiusUnit.classList.remove("active");
-  farenheitUnit.classList.add("active");
-}
-function displayCelsiusTemp(event) {
-  event.preventDefault();
-  let celsiusElement = document.querySelector(".temp");
-  celsiusElement.innerHTML = Math.round(celsiusTemperature);
-  celsiusUnit.classList.add("active");
-  farenheitUnit.classList.remove("active");
-}
-
-let celsiusTemperature = null;
-
 let form = document.querySelector("#search-form");
 form.addEventListener("submit", handleSubmit);
-
-let farenheitUnit = document.querySelector("#farenheitUnit");
-farenheitUnit.addEventListener("click", displayFarenheitTemp);
-
-let celsiusUnit = document.querySelector("#celsiusUnit");
-celsiusUnit.addEventListener("click", displayCelsiusTemp);
 
 search("Szczecin");
